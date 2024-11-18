@@ -24,7 +24,7 @@ function Hero(): JSX.Element {
         <p>خوشحال میشم اگه بتونم بهت کمک کنم، پس با من در ارتباط باش. 😉</p>
       </div>
 
-      <div className="mt-3 mb-8 font-vazir" dir="ltr" id="about-me">
+      <div className="mt-3 mb-8 font-vazir" dir="ltr">
         <p>Hello</p>
         <p>
           I am Asadullah Heidari, a front end programmer. I am glad that you are

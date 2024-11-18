@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import chicken from "./../../public/images/chicken.gif";
+import chicken from "./../../../public/images/chicken.gif";
 // import data from "@/app/data/posts.json";
 
 import { TData } from "../../data/type";

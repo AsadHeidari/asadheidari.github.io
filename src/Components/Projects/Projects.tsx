@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import catImage from "./../../public/images/cat.gif";
+import catImage from "./../../../public/images/cat.gif";
 // import data from "@/app/data/projects.json";
 
 import { TData } from "../../data/type";

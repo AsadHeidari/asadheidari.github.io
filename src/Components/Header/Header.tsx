@@ -7,20 +7,20 @@
 function Header(): JSX.Element {
   return (
     <div className="fixed left-0 top-0 w-full flex flex-row items-center justify-between text-sm font-vazir backdrop-blur-sm z-10 px-4">
-      <nav className=" flex justify-center items-center pb-6 pt-6 lg:static lg:w-auto gap-4 ">
+      <nav className=" flex justify-center items-center pb-6 pt-6 lg:static lg:w-auto gap-2 ">
         <a
-          className="text-black border-b-2 border-yellow-400 p-1 hover:bg-black hover:text-white"
+          className="py-2 px-2 rounded-lg text-neutral-800 bg-yellow-400 hover:bg-black hover:text-white"
           href="#about-me"
         >
           درباره من
         </a>
         <a
           href="/CV/CV.pdf"
-          download="AsadollahHeidari.FrontEnd.En.Fa.CV.pdf"
+          download="AsadollahHeidari.FrontEnd.CV.pdf"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button className="py-2 px-2 rounded-lg text-black bg-yellow-400">
+          <button className="py-2 px-2 rounded-lg text-neutral-800 bg-yellow-400 hover:bg-black hover:text-white">
             دانلود روزمه من
           </button>
         </a>
