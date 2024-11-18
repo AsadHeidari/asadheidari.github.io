@@ -6,12 +6,15 @@
  */
 function Hero(): JSX.Element {
   return (
-    <div className="border w-full rounded-2xl p-4 flex flex-col items-center backdrop-blur-sm mt-[40rem] lg:mt-[40rem]">
+    <div
+      id="about-me"
+      className="border w-full rounded-2xl p-4 flex flex-col items-center backdrop-blur-sm mt-[40rem] lg:mt-[40rem]"
+    >
       <h1 className="font-vazir font-bold border-b-2 border-yellow-400 p-1 text-lg w-full text-center">
         درباره من | About Me
       </h1>
 
-      <div className="mt-3 mb-8 font-vazir" id="about-me">
+      <div className="mt-3 mb-8 font-vazir">
         <p>سلام 👋</p>
         <p>
           من اسدالله حیدری هستم، برنامه نویس فرانت اند. خوشحالم که این جا هستی
