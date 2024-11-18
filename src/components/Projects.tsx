@@ -14,7 +14,7 @@ type Data = {
 };
 
 function Projects() {
-  const [projects, setProjects] = useState<Data[]>([]);
+  const [projects] = useState<Data[]>([]);
 
   useEffect(() => {
     // setProjects(data);

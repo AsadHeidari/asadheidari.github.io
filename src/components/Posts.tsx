@@ -15,7 +15,7 @@ type Data = {
 };
 
 function Posts() {
-  const [posts, setPosts] = useState<Data[]>([]);
+  const [posts] = useState<Data[]>([]);
 
   useEffect(() => {
     // setPosts(data);
