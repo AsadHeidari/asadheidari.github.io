@@ -5,16 +5,24 @@ import { useEffect, useState } from "react";
 import catImage from "./../../public/images/cat.gif";
 // import data from "@/app/data/projects.json";
 
-type Data = {
-  id: number;
-  title: string;
-  "image-url": string;
-  description: string;
-  text: string;
-};
+import { TData } from "../../data/type";
 
-function Projects() {
-  const [projects] = useState<Data[]>([]);
+/**
+ * Projects component displays a list of projects.
+ *
+ * @component
+ * @returns {JSX.Element} The JSX element representing the Projects component.
+ */
+function Projects(): JSX.Element {
+  /* -------------------------------------------------------------------------- */
+  /*                                    State                                   */
+  /* -------------------------------------------------------------------------- */
+
+  const [projects] = useState<TData[]>([]);
+
+  /* -------------------------------------------------------------------------- */
+  /*                                   Effect                                   */
+  /* -------------------------------------------------------------------------- */
 
   useEffect(() => {
     // setProjects(data);

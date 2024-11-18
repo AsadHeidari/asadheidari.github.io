@@ -1,4 +1,10 @@
-function Hero() {
+/**
+ * Hero component displays information about the developer.
+ *
+ * @component
+ * @returns {JSX.Element} The JSX element representing the Hero component.
+ */
+function Hero(): JSX.Element {
   return (
     <div className="border w-full rounded-2xl p-4 flex flex-col items-center backdrop-blur-sm mt-[40rem] lg:mt-[40rem]">
       <h1 className="font-vazir font-bold border-b-2 border-yellow-400 p-1 text-lg w-full text-center">

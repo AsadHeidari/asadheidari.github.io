@@ -1,4 +1,10 @@
-function Footer() {
+/**
+ * Footer component displays social media links and contact information.
+ *
+ * @component
+ * @returns {JSX.Element} The JSX element representing the Footer component.
+ */
+function Footer(): JSX.Element {
   return (
     <div className="mt-10 flex flex-col items-center mb-20 lg:mb-0">
       <div className="flex gap-5 justify-center">

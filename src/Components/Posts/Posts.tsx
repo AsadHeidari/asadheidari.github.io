@@ -2,20 +2,30 @@
 
 import { useEffect, useState } from "react";
 
-// import data from "@/app/data/posts.json";
 import chicken from "./../../public/images/chicken.gif";
+// import data from "@/app/data/posts.json";
 
-type Data = {
-  id: number;
-  title: string;
-  "image-url": string;
-  description: string;
-  text: string;
-  reference: string;
-};
+import { TData } from "../../data/type";
 
-function Posts() {
-  const [posts] = useState<Data[]>([]);
+/**
+ * Posts Component
+ *
+ * This component displays a list of posts. It fetches post data and renders
+ * individual post cards based on the available posts.
+ *
+ * @component
+ * @returns {JSX.Element} The JSX element representing the Posts component
+ */
+function Posts(): JSX.Element {
+  /* -------------------------------------------------------------------------- */
+  /*                                    State                                   */
+  /* -------------------------------------------------------------------------- */
+
+  const [posts] = useState<TData[]>([]);
+
+  /* -------------------------------------------------------------------------- */
+  /*                                   Effect                                   */
+  /* -------------------------------------------------------------------------- */
 
   useEffect(() => {
     // setPosts(data);

@@ -1,11 +1,19 @@
-import Hero from "./components/Hero";
-import Posts from "./components/Posts";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Projects from "./components/Projects";
-import AnimationLogo from "./components/AnimationLogo";
+import Hero from "./Components/Hero/Hero";
+import Posts from "./Components/Posts/Posts";
+import Footer from "./Components/Footer/Footer";
+import Header from "./Components/Header/Header";
+import Projects from "./Components/Projects/Projects";
+import AnimationLogo from "./Components/AnimationLogo/AnimationLogo";
 
-function App() {
+/**
+ * Main application component.
+ * Renders the entire website structure including header, hero section, projects,
+ * posts, and footer.
+ *
+ * @component
+ * @returns {JSX.Element} The JSX element representing the entire application.
+ */
+function App(): JSX.Element {
   return (
     <>
       <AnimationLogo />

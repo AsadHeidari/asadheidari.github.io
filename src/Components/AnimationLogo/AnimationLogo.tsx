@@ -47,7 +47,13 @@ const CardWrapper = styled(motion.div)`
   backdrop-filter: blur(4px) brightness(120%);
 `;
 
-function AnimationLogo() {
+/**
+ * AnimationLogo component creates an animated logo with rotating cards and a sheen effect.
+ *
+ * @component
+ * @returns {JSX.Element} The JSX element representing the AnimationLogo component.
+ */
+function AnimationLogo(): JSX.Element {
   const mouseX = useMotionValue(
     typeof window !== "undefined" ? window.innerWidth / 2 : 0
   );
