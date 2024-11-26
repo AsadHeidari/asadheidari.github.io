@@ -33,7 +33,7 @@ function Footer(): JSX.Element {
       >
         AsadHeidari86@gmail.com
       </a>
-      <p className="mt-1">&copy; 2023</p>
+      <p className="mt-1"> &copy; 2023-{new Date().getFullYear()}</p>
     </div>
   );
 }

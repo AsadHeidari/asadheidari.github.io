@@ -21,7 +21,55 @@ body {
   padding: 0;
   direction: rtl;
   color: rgb(var(--foreground-rgb));
-  background: #000;
   background: linear-gradient(28deg, #000, #094079 51%, #00ffb3);
   overflow: hidden auto;
+}
+
+.btn {
+  font-size: 18px;
+  border-radius: 50px;
+  background-size: 600%;
+  background-color: #fbab7e;
+  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+
+  -webkit-animation: anime 8s linear infinite;
+  animation: anime 8s linear infinite;
+}
+.btn2 {
+  position: absolute;
+  width: 250px;
+  height: 30px;
+  border-radius: 50%;
+  margin-top: 60px;
+  background-size: 600%;
+  background-color: #f4d03f;
+  background-image: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);
+  z-index: -1;
+  filter: blur(20px);
+  opacity: 0.8;
+  -webkit-animation: anime 10s linear infinite;
+  animation: anime 10s linear infinite;
+}
+
+@-webkit-keyframes anime {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes anime {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

@@ -4,6 +4,7 @@ import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import Projects from "./Components/Projects/Projects";
 import AnimationLogo from "./Components/AnimationLogo/AnimationLogo";
+import DownloadResumeButton from "./Components/DownloadResumeButton/DownloadResumeButton";
 
 /**
  * Main application component.
@@ -16,9 +17,10 @@ import AnimationLogo from "./Components/AnimationLogo/AnimationLogo";
 function App(): JSX.Element {
   return (
     <>
+      <Header />
       <AnimationLogo />
       <main className="container lg mx-auto flex min-h-screen flex-col items-center justify-between px-10 py-10 lg:px-24 h-full w-full">
-        <Header />
+        <DownloadResumeButton />
         <Hero />
         <Projects />
         <Posts />

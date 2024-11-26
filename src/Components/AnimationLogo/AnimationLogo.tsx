@@ -100,7 +100,7 @@ function AnimationLogo(): JSX.Element {
   );
 
   const sheenGradient = useMotionTemplate`linear-gradient(
-    180deg,
+    60deg,
     transparent,
     rgba(255 255 255 / ${sheenOpacity}) ${sheenPosition}%,
     transparent)`;
