@@ -17,7 +17,7 @@ function App(): JSX.Element {
   return (
     <>
       <AnimationLogo />
-      <main className="flex min-h-screen flex-col items-center justify-between px-10 py-10 lg:px-24 h-full w-full">
+      <main className="container lg mx-auto flex min-h-screen flex-col items-center justify-between px-10 py-10 lg:px-24 h-full w-full">
         <Header />
         <Hero />
         <Projects />

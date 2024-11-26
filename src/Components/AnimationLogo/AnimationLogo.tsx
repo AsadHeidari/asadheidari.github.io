@@ -8,7 +8,7 @@ import {
   useTransform,
 } from "framer-motion";
 
-const SIZE = 50;
+const SIZE = 20;
 
 const DotGrid = styled.div`
   position: absolute;
@@ -21,23 +21,26 @@ const DotGrid = styled.div`
     transparent 0
   );
   background-position: center;
-  transform: translateZ(-500px);
+  transform: translateZ(-200px);
 `;
 
 const Container = styled.div`
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 200px;
   overflow: hidden;
-  perspective: 1000px;
+  perspective: 800px;
+  max-width: 1024px;
 `;
 
 const RotationWrapper = styled(motion.div)`
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   transform-style: preserve-3d;
 `;
 
@@ -97,7 +100,7 @@ function AnimationLogo(): JSX.Element {
   );
 
   const sheenGradient = useMotionTemplate`linear-gradient(
-    55deg,
+    180deg,
     transparent,
     rgba(255 255 255 / ${sheenOpacity}) ${sheenPosition}%,
     transparent)`;
@@ -126,8 +129,7 @@ function AnimationLogo(): JSX.Element {
           <img
             src="/images/AH.png"
             alt="AsadHeidari"
-            width={400}
-            height={400}
+            className="w-[200px]  sm:w-[400px] sm:h-[400px]"
           />
         </CardWrapper>
       </RotationWrapper>
