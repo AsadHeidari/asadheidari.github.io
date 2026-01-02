@@ -29,7 +29,8 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  margin-top: 200px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   overflow: hidden;
   perspective: 800px;
   max-width: 1024px;

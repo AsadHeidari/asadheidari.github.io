@@ -6,7 +6,7 @@
  */
 function Header(): JSX.Element {
   return (
-    <div className="fixed left-0 top-0 w-full flex flex-row items-center justify-between text-sm font-vazir backdrop-blur-sm z-10 px-4">
+    <div className=" w-full flex flex-row items-center justify-between text-sm  backdrop-blur-sm z-10 px-4">
       <nav className=" flex justify-center items-center pb-6 pt-6 lg:static lg:w-auto gap-2 "></nav>
       <img src="/images/logo.png" alt="logo" width={100} height={24} />
     </div>

@@ -1,3 +1,4 @@
+@import url(/public/fonts/fonts.css);
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,13 +17,20 @@
   }
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Vazir, sans-serif;
+}
+
 body {
   margin: 0;
   padding: 0;
   direction: rtl;
+  overflow: hidden auto;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(28deg, #000, #094079 51%, #00ffb3);
-  overflow: hidden auto;
 }
 
 .btn {
