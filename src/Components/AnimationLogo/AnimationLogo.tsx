@@ -1,11 +1,11 @@
 import { useEffect, useRef } from "react";
 import styled from "@emotion/styled";
 import {
-  animate,
   motion,
   useMotionTemplate,
   useMotionValue,
   useTransform,
+  useSpring,
 } from "framer-motion";
 
 const SIZE = 20;
@@ -66,31 +66,36 @@ function AnimationLogo(): JSX.Element {
   );
 
   const cardRef = useRef<HTMLDivElement>(null);
+  const rectRef = useRef<DOMRect | null>(null);
+  const rafRef = useRef<number | null>(null);
+  const lastXRef = useRef(0);
+  const lastYRef = useRef(0);
 
   // rotation
   const dampen = 30;
 
   const rotateX = useTransform<number, number>(mouseY, (newMouseY) => {
-    if (!cardRef.current) return 0;
-    const rect = cardRef.current.getBoundingClientRect();
+    const rect = rectRef.current;
+    if (!rect) return 0;
     const newRotateX = newMouseY - rect.top - rect.height / 2;
     return -newRotateX / dampen;
   });
 
   const rotateY = useTransform(mouseX, (newMouseX) => {
-    if (!cardRef.current) return 0;
-    const rect = cardRef.current.getBoundingClientRect();
+    const rect = rectRef.current;
+    if (!rect) return 0;
     const newRotateY = newMouseX - rect.left - rect.width / 2;
     return newRotateY / dampen;
   });
 
+  // smooth rotations to avoid frequent style updates
+  const smoothRotateX = useSpring(rotateX, { stiffness: 300, damping: 30 });
+  const smoothRotateY = useSpring(rotateY, { stiffness: 300, damping: 30 });
+
   // sheen
   const diagonalMovement = useTransform<number, number>(
-    [rotateX, rotateY],
-    ([newRotateX, newRotateY]) => {
-      const position: number = newRotateX + newRotateY;
-      return position;
-    }
+    [smoothRotateX, smoothRotateY],
+    ([newRotateX, newRotateY]) => newRotateX + newRotateY
   );
 
   const sheenPosition = useTransform(diagonalMovement, [-5, 5], [-100, 200]);
@@ -106,25 +111,46 @@ function AnimationLogo(): JSX.Element {
     rgba(255 255 255 / ${sheenOpacity}) ${sheenPosition}%,
     transparent)`;
 
-  // handle mouse move on document
+  // cache card rect and listen for resize; throttle mousemove with rAF
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      // animate mouse x and y
-      animate(mouseX, e.clientX);
-      animate(mouseY, e.clientY);
-    };
     if (typeof window === "undefined") return;
-    // recalculate grid on resize
+
+    const updateRect = () => {
+      if (cardRef.current)
+        rectRef.current = cardRef.current.getBoundingClientRect();
+    };
+
+    updateRect();
+    const ro = new ResizeObserver(updateRect);
+    if (cardRef.current) ro.observe(cardRef.current);
+    window.addEventListener("resize", updateRect);
+
+    const handleMouseMove = (e: MouseEvent) => {
+      lastXRef.current = e.clientX;
+      lastYRef.current = e.clientY;
+      if (rafRef.current != null) return;
+      rafRef.current = requestAnimationFrame(() => {
+        mouseX.set(lastXRef.current);
+        mouseY.set(lastYRef.current);
+        rafRef.current = null;
+      });
+    };
+
     window.addEventListener("mousemove", handleMouseMove);
-    // cleanup
+
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("resize", updateRect);
+      ro.disconnect();
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, []);
+  }, [mouseX, mouseY]);
 
   return (
     <Container>
-      <RotationWrapper style={{ rotateX, rotateY }}>
+      <RotationWrapper
+        style={{ rotateX: smoothRotateX, rotateY: smoothRotateY }}
+      >
         <DotGrid />
         <CardWrapper ref={cardRef} style={{ backgroundImage: sheenGradient }}>
           <img
