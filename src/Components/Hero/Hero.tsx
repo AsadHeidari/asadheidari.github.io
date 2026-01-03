@@ -6,12 +6,12 @@
  */
 function Hero(): JSX.Element {
   return (
-    <div className="border w-full rounded-2xl p-4 flex flex-col items-center backdrop-blur-sm ">
-      <h1 className="font-vazir font-bold border-b-2 border-yellow-400 p-1 text-lg w-full text-center">
+    <div className="border w-full rounded-2xl  p-4 flex flex-col items-center backdrop-blur-sm ">
+      <h1 className=" font-bold border-b-2 border-yellow-400 p-1 text-lg w-full text-center">
         درباره من | About Me
       </h1>
 
-      <div className="mt-3 mb-8 font-vazir">
+      <div className="mt-3 mb-8 ">
         <p>سلام 👋</p>
         <p>
           من اسدالله حیدری هستم، برنامه نویس فرانت اند. خوشحالم که این جا هستی
@@ -24,7 +24,7 @@ function Hero(): JSX.Element {
         <p>خوشحال میشم اگه بتونم بهت کمک کنم، پس با من در ارتباط باش. 😉</p>
       </div>
 
-      <div className="mt-3 mb-8 font-vazir" dir="ltr">
+      <div className="mt-3 mb-8 " dir="ltr">
         <p>Hello</p>
         <p>
           I am Asadullah Heidari, a front end programmer. I am glad that you are
